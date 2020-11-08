@@ -153,9 +153,32 @@ Use the scoreboard function below to do the following:
 ]  
   */
 
+ function getInningScore (homeScores, awayScores, numberOfInnings) {
+   let newArray = [];
+  let homeTotal = 0;
+  let awayTotal = 0;
+  for (let i = 0; i < numberOfInnings; i++) {
+    homeTotal = homeTotal + homeScores[i];
+    awayTotal = awayTotal + awayScores[i];
+    newArray.push()
+    console.log(`Inning ${i + 1}: ${awayScores[i]} - ${homeScores[i]}`)
+  }
+  console.log(`Final Score: ${awayTotal} - ${homeTotal}`)
 
-function scoreboard(func, callback, num) {
+ }
 
-}
+  function scoreboard(inningScore, inningFunction, numberOfInnings) {
+    const homeScores = [];
+    const awayScores = [];
+  
+    for (let i = 0; i < numberOfInnings; i++) {
+      homeScores[i] = inningFunction();
+      awayScores[i] = inningFunction();
+    }
+  
+    return inningScore(homeScores, awayScores, numberOfInnings);
+  }
+
+  scoreboard(getInningScore, inning, 9);
 
 
